@@ -26,7 +26,7 @@ type BitWriter interface {
 }
 
 type BitsWriter struct {
-	// A counter for the number of bits haved been written.
+	// A counter for the number of bits which have been written.
 	NumBits int
 
 	// The byte stream to write to. We can only write at a byte level
@@ -42,11 +42,11 @@ type BitsWriter struct {
 	accumulationByte byte
 }
 
-// Create a new BitWriter.
+// Create a new BitsWriter.
 // Args:
 //   stream: The byte stream in which to write the bits to. Note the bit writer
 //     can only write at a byte level granularity.
-//     For Example: I
+//     For Example: 
 //       If we only have the bits '101' to write in the last byte.
 //       The full byte '1010 0000' will still be output to the stream.
 // Return:

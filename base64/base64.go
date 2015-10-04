@@ -11,7 +11,7 @@ const (
 
 // Helper function for finding the index of a string byte in the 'codes' const
 // Args:
-//   index: The 'letter' in the codes in which to retrieve the index for
+//   index: The 'letter' in the codes in which to retrieve the index value.
 // Return:
 //   byte: The int position of the index value returned as a byte.
 func indexOf(index byte) byte {

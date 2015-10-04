@@ -26,8 +26,8 @@ type BitsReader struct {
 	nextByte byte
 	// A flag to denote if the 'bufferedByte' is the LAST byte of the stream.
 	hasNextByte bool
-	// The position the read in currently indexed into the buffered bytes
-	// Must be a value between 7 -> 0
+	// The index position in the bufferedByte that the read will read the next 
+	// bit from. Must be a value between 7 -> 0
 	bitPos uint
 	// The current byte being read from.
 	bufferedByte byte
@@ -88,7 +88,7 @@ func (self *BitsReader) Read() (int, error) {
 
 	if !self.hasNextByte && self.bitPos < self.SkipBits {
 		// This is the last byte, and we have read all the 'valid' bits of the byte
-		// Return with an error singalling that the reading is finished.
+		// Return with an error signalling that the reading is finished.
 		return 0, errors.New("Finished reading")
 	}
 
