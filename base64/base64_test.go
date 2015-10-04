@@ -36,6 +36,16 @@ func TestDecode(t *testing.T) {
 	}
 }
 
+func TestEncodeDecode(t *testing.T) {
+	for i, c := range kCases {
+		encoded := Encode(c.raw)
+		decoded := Decode(encoded)
+		if !reflect.DeepEqual(decoded, c.raw) {
+			t.Errorf("Failed at index %v", i)
+		}
+	}
+}
+
 func TestIndexOf(t *testing.T) {
 	cases := []struct {
 		letter byte

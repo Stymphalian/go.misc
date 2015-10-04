@@ -10,6 +10,10 @@ const (
 )
 
 // Helper function for finding the index of a string byte in the 'codes' const
+// Args:
+//   index: The 'letter' in the codes in which to retrieve the index for
+// Return:
+//   byte: The int position of the index value returned as a byte.
 func indexOf(index byte) byte {
 	if index >= byte("A"[0]) && index <= byte("Z"[0]) {
 		return index - byte("A"[0])
@@ -28,6 +32,10 @@ func indexOf(index byte) byte {
 }
 
 // Function to encode a blob of binary data into a base64 encoded string
+// Args:
+//   data: The binary data in which to encode
+// Return:
+//   string: The base64 encoded string.
 func Encode(data []byte) string {
 	var buffer bytes.Buffer
 	var b byte
@@ -81,6 +89,10 @@ func Encode(data []byte) string {
 }
 
 // Function to decode a base64 encoded string into a blob of binary data.
+// Args:
+//   data: The base64 encoded string to decode.
+// Return:
+//   []byte: The decoded binary
 func Decode(data string) []byte {
 	if len(data)%4 != 0 {
 		panic("Not a base64 encoded string")
